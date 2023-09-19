@@ -1,0 +1,8 @@
+upload
+output
+checkpoints
+gfpgan
+*.log
+**__pycache__**
+data.sqlite3
+Pipfile*

@@ -15,7 +15,7 @@ from src.generate_facerender_batch import get_facerender_data
 from src.utils.init_path import init_path
 
 
-def main(args):
+def infer(args):
     # torch.backends.cudnn.enabled = False
 
     pic_path = args.source_image
@@ -103,6 +103,7 @@ def main(args):
 
     if not args.verbose:
         shutil.rmtree(save_dir)
+    return save_dir + '.mp4'
 
 
 parser = ArgumentParser()
@@ -172,3 +173,4 @@ if torch.cuda.is_available() and not args.cpu:
     args.device = "cuda"
 else:
     args.device = "cpu"
+print('Using device:', args.device)

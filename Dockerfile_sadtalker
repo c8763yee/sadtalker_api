@@ -7,6 +7,8 @@ RUN sed -i '91d' /etc/ImageMagick-6/policy.xml
 
 EXPOSE 7414
 ADD . /app
+WORKDIR /app
 # ADD sadtalker_api /sadtalker // this is for remote intergration test
+# WORKDIR /sadtalker
 RUN pip install -qr requirements.txt
 CMD ["/bin/bash", "run.sh"]
